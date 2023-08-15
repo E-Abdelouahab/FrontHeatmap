@@ -15,7 +15,7 @@ const SelectComponent: React.FC<SelectComponentProps> = ({ selectionType,options
   };
   const isMultiSelect = selectionType === 'Gene IDs';
   return (
-    <>
+    <div>
       <h2>Select {selectionType}:</h2>
       <Select
         options={options}
@@ -25,7 +25,7 @@ const SelectComponent: React.FC<SelectComponentProps> = ({ selectionType,options
         isSearchable={true}
         isMulti={isMultiSelect}
       />
-    </>
+    </div>
   );
 };
 
