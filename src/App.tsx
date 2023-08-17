@@ -148,14 +148,8 @@ function App() {
           
         });
         console.log('Fetched data:', response.data);
-        // const transformedData = response.data.map((item: any) => ({
-        //   "SRA": item.SRA,
-        //   "Gene IDs": item.gene_ids,
-        //   "value": parseFloat(item.value), 
-        // }));
         setHeatmapData(response.data);
         setIsLoading(false);
-        // console.log('Fetched data:', transformedData);
       } catch (error) {
         console.error('Error fetching data:', error);
       }

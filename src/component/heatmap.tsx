@@ -7,7 +7,6 @@ interface HeatMapComponentProps {
   valueField: string;
   data: any[];
 }
-
 const HeatMapComponent: React.FC<HeatMapComponentProps> = ({
   xField,
   yField,
@@ -25,7 +24,7 @@ const HeatMapComponent: React.FC<HeatMapComponentProps> = ({
 
   const hasCT = transformedData.some((item) => item.Abbreviation === "CT");
   const hasPT = transformedData.some((item) => item.Abbreviation === "PT");
-
+  
   const colorBarStyle = {
     background: `linear-gradient(${
       hasCT && hasPT
