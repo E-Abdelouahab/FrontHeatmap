@@ -52,3 +52,15 @@
   .container-fluid {
   width: 300px;
   }
+  .heatmap-container {
+    position: relative;
+  }
+  
+  .color-bar {
+    position: absolute;
+    top: -30px  ;
+    left: 0;
+    width: 94%; /* Full width of the heatmap container */
+    height: 0.5rem; /* Adjust the height as needed */
+    /* background: linear-gradient(to right, #56BD89 50%, #6E85B7 50%);  */
+  }

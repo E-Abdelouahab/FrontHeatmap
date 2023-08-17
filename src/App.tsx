@@ -29,9 +29,7 @@ function App() {
         case 'SRA':
         setSelectedSRA(selectedOptions);
         break;
-      
-      
-      default:
+        default:
         break;
     }
   };
@@ -73,16 +71,7 @@ function App() {
     { value: 'Parkinson', label: 'Parkinson' },
   ];
 
-  const exprimentOptions = [
-    
-    { value: 'PRJNA869106', label: 'PRJNA869106' },
-    { value: 'PRJNA143369', label: 'PRJNA143369' },
-    { value: 'ALL', label: 'ALL' },
-    
-  ];
-
   const sraOptions = [
-    { value: 'ALL', label: 'ALL' },
     { value: 'SRR309133', label: 'SRR309133' },
     { value: 'SRR309134', label: 'SRR309134' },
     { value: 'SRR309135', label: 'SRR309135' },
@@ -95,7 +84,53 @@ function App() {
     { value: 'SRR309142', label: 'SRR309142' },
     { value: 'SRR309143', label: 'SRR309143' },
     { value: 'SRR309144', label: 'SRR309144' },
+    { value: 'SRR21029644', label: 'SRR21029644' },
+    { value: 'SRR21029645', label: 'SRR21029645' },
+    { value: 'SRR21029646', label: 'SRR21029646' },
+    { value: 'SRR21029647', label: 'SRR21029647' },
+    { value: 'SRR21029648', label: 'SRR21029648' },
+    { value: 'SRR21029649', label: 'SRR21029649' },
+    { value: 'SRR21029650', label: 'SRR21029650' },
+    { value: 'SRR21029651', label: 'SRR21029651' },
+    { value: 'SRR21029652', label: 'SRR21029652' },
+    { value: 'SRR21029653', label: 'SRR21029653' },
+    { value: 'SRR21029654', label: 'SRR21029654' },
+    { value: 'SRR21029655', label: 'SRR21029655' },
+    { value: 'SRR21029656', label: 'SRR21029656' },
+    { value: 'SRR21029657', label: 'SRR21029657' },
+    { value: 'SRR21029658', label: 'SRR21029658' },
+    { value: 'SRR21029659', label: 'SRR21029659' },
+    { value: 'SRR21029660', label: 'SRR21029660' },
+    { value: 'SRR21029661', label: 'SRR21029661' },
+    { value: 'SRR21029662', label: 'SRR21029662' },
+    { value: 'SRR21029663', label: 'SRR21029663' },
+    { value: 'SRR21029664', label: 'SRR21029664' },
+    { value: 'SRR21029665', label: 'SRR21029665' },
+    { value: 'SRR21029666', label: 'SRR21029666' },
+    { value: 'SRR21029667', label: 'SRR21029667' },
+    { value: 'SRR21029668', label: 'SRR21029668' },
+    { value: 'SRR21029669', label: 'SRR21029669' },
+    { value: 'SRR21029670', label: 'SRR21029670' },
+    { value: 'SRR21029671', label: 'SRR21029671' },
+    { value: 'SRR21029672', label: 'SRR21029672' },
+    { value: 'SRR21029673', label: 'SRR21029673' },
+    { value: 'SRR21029674', label: 'SRR21029674' },
+    { value: 'SRR21029675', label: 'SRR21029675' },
+    { value: 'SRR21029676', label: 'SRR21029676' },
+    { value: 'SRR21029677', label: 'SRR21029677' },
+    { value: 'SRR21029678', label: 'SRR21029678' },
+    { value: 'SRR21029679', label: 'SRR21029679' },
+    { value: 'SRR21029680', label: 'SRR21029680' },
+    { value: 'SRR21029681', label: 'SRR21029681' },
+    { value: 'SRR21029682', label: 'SRR21029682' },
   ];
+
+  const exprimentOptions = [
+    
+    { value: 'PRJNA869106', label: 'PRJNA869106' },
+    { value: 'PRJNA143369', label: 'PRJNA143369' },
+  ];
+
 
   console.log(selectedSRA);
   
@@ -113,14 +148,14 @@ function App() {
           
         });
         console.log('Fetched data:', response.data);
-        const transformedData = response.data.map((item: any) => ({
-          "SRA": item.SRA,
-          "Gene IDs": item.gene_ids,
-          "value": parseFloat(item.value), 
-        }));
-        setHeatmapData(transformedData);
+        // const transformedData = response.data.map((item: any) => ({
+        //   "SRA": item.SRA,
+        //   "Gene IDs": item.gene_ids,
+        //   "value": parseFloat(item.value), 
+        // }));
+        setHeatmapData(response.data);
         setIsLoading(false);
-        console.log('Fetched data:', transformedData);
+        // console.log('Fetched data:', transformedData);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -138,7 +173,7 @@ function App() {
         <SelectComponent selectionType="Disease" options={diseaseOptions} onSelect={handleSelect} />
         <SelectComponent selectionType="Experiment" options={exprimentOptions} onSelect={handleSelect} />
         <SelectComponent selectionType="SRA" options={sraOptions} onSelect={handleSelect} />
-            
+    
         </div>
       </div>
       <div className="  bg-green-300 px-11 py-11 w-full rounded">
@@ -149,7 +184,8 @@ function App() {
           data={heatmapData}
         /> 
        {isLoading && <p>Loading...</p>}
-      </div>
+      </div>  
+ 
     </div>
   );
 }

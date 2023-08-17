@@ -24,6 +24,7 @@ const SelectComponent: React.FC<SelectComponentProps> = ({ selectionType,options
         onChange={handleSelect}
         isSearchable={true}
         isMulti={isMultiSelect}
+        isClearable={true}
       />
     </div>
   );
