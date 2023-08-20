@@ -44,6 +44,7 @@ const HeatMapComponent: React.FC<HeatMapComponentProps> = ({
       y: { field: yField, type: "ordinal" },
       color: {
         field: valueField,
+        scale: {scheme: "viridis"},  
         type: "quantitative",
         legend: { title: "Value"},
         aggregate: "mean"
